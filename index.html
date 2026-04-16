@@ -7,6 +7,7 @@
     <style>
         :root {
             --bg-dark-blue: #0a0f1e;
+            --bg-deep-blue: #070a14;
             --highlight-cyan: #00d4ff;
             --text-white: #ffffff;
             --text-gray: #a0a0a0;
@@ -16,7 +17,7 @@
 
         body {
             margin: 0;
-            font-family: -apple-system, BlinkMacMacSystemFont, 'Segoe UI', sans-serif;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
             background-color: var(--bg-dark-blue);
             color: var(--text-white);
             line-height: 1.6;
@@ -152,8 +153,8 @@
         }
 
         .btn-filled:hover {
-            background-color: darken(var(--highlight-cyan), 10%);
-            border-color: darken(var(--highlight-cyan), 10%);
+            background-color: #00b8e6;
+            border-color: #00b8e6;
         }
 
         .hero-card {
@@ -229,13 +230,13 @@
             100% { transform: translateY(10px); opacity: 0; }
         }
 
-        /* Sections */
+        /* Sections General */
         section {
-            padding: 4rem 1rem;
+            padding: 6rem 1rem;
             border-top: 1px solid var(--border-color);
             opacity: 0;
-            transform: translateY(20px);
-            transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+            transform: translateY(30px);
+            transition: opacity 0.8s ease-out, transform 0.8s ease-out;
         }
 
         section.visible {
@@ -247,53 +248,209 @@
             font-size: 2.5rem;
             color: var(--text-white);
             text-align: center;
-            margin-bottom: 2rem;
+            margin-bottom: 3rem;
         }
 
         section h2 span {
             color: var(--highlight-cyan);
         }
 
-        .section-content {
-            max-width: 800px;
-            margin: 0 auto;
-            text-align: center;
-            color: var(--text-gray);
-        }
-
-        .section-content p {
-            margin-bottom: 1.5rem;
-        }
-
-        .grid-3-cols {
+        /* Nossa Tese Section */
+        .tese-grid {
             display: grid;
             grid-template-columns: 1fr;
             gap: 2rem;
-            margin-top: 2rem;
+            max-width: 1000px;
+            margin: 0 auto;
         }
 
-        .grid-item {
+        .tese-card {
+            display: flex;
+            align-items: center;
+            background-color: rgba(255, 255, 255, 0.03);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            border-radius: 12px;
+            padding: 2rem;
+            gap: 2rem;
+            transition: transform 0.3s ease;
+        }
+
+        .tese-card:hover {
+            transform: translateX(10px);
+            border-color: var(--highlight-cyan);
+        }
+
+        .icon-geom {
+            width: 60px;
+            height: 60px;
+            flex-shrink: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+        }
+
+        .icon-square-rot {
+            width: 30px;
+            height: 30px;
+            border: 2px solid var(--highlight-cyan);
+            transform: rotate(45deg);
+        }
+
+        .icon-circle {
+            width: 35px;
+            height: 35px;
+            border: 2px solid var(--highlight-cyan);
+            border-radius: 50%;
+        }
+
+        .icon-lines {
+            width: 40px;
+            height: 2px;
+            background-color: var(--highlight-cyan);
+            position: relative;
+        }
+        .icon-lines::before, .icon-lines::after {
+            content: '';
+            position: absolute;
+            width: 40px;
+            height: 2px;
+            background-color: var(--highlight-cyan);
+            left: 0;
+        }
+        .icon-lines::before { top: -8px; }
+        .icon-lines::after { bottom: -8px; }
+
+        .tese-text strong {
+            display: block;
+            font-size: 1.3rem;
+            color: var(--highlight-cyan);
+            margin-bottom: 0.5rem;
+        }
+
+        .tese-text p {
+            margin: 0;
+            color: var(--text-gray);
+        }
+
+        /* Modelo de Atuação Section */
+        .atuacao-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 2rem;
+        }
+
+        .atuacao-card {
             background-color: rgba(255, 255, 255, 0.05);
             border: 1px solid rgba(255, 255, 255, 0.1);
-            border-radius: 8px;
-            padding: 1.5rem;
-            text-align: left;
+            border-radius: 12px;
+            padding: 2.5rem;
+            display: flex;
+            flex-direction: column;
         }
 
-        .grid-item h3 {
+        .atuacao-card .label {
+            font-family: 'Courier New', Courier, monospace;
             color: var(--highlight-cyan);
-            margin-top: 0;
-            font-size: 1.3rem;
+            font-size: 0.8rem;
+            letter-spacing: 0.15em;
+            margin-bottom: 1rem;
         }
 
-        .grid-item p {
-            font-size: 0.95rem;
+        .atuacao-card h3 {
+            font-size: 1.8rem;
+            margin: 0 0 1.5rem 0;
+        }
+
+        .atuacao-card ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .atuacao-card ul li {
+            padding: 0.6rem 0;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
             color: var(--text-gray);
+            font-size: 0.95rem;
+        }
+        .atuacao-card ul li:last-child { border-bottom: none; }
+
+        /* Ecossistema Hubstry Section */
+        .hubstry-section {
+            background-color: var(--bg-deep-blue);
+            text-align: center;
+        }
+
+        .hubstry-content {
+            max-width: 720px;
+            margin: 0 auto;
+        }
+
+        .hubstry-content p {
+            font-size: 1.1rem;
+            color: var(--text-gray);
+            margin-bottom: 2.5rem;
+        }
+
+        .link-arrow {
+            color: var(--highlight-cyan);
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 1.1rem;
+            transition: letter-spacing 0.3s ease;
+        }
+        .link-arrow:hover {
+            letter-spacing: 0.05em;
+        }
+
+        /* Contato Section */
+        .contato-section {
+            text-align: center;
+        }
+
+        .contato-subtitle {
+            font-family: 'Courier New', Courier, monospace;
+            color: var(--highlight-cyan);
+            font-size: 1.2rem;
+            letter-spacing: 0.2em;
+            margin-bottom: 3rem;
+        }
+
+        .contato-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 3rem;
+            max-width: 900px;
+            margin: 0 auto 4rem auto;
+        }
+
+        .contato-item {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .contato-item .icon-geom {
+            background-color: rgba(0, 212, 255, 0.1);
+            border-radius: 50%;
+            margin-bottom: 1rem;
+        }
+
+        .contato-item a {
+            color: var(--text-white);
+            text-decoration: none;
+            font-size: 1.1rem;
+            transition: color 0.3s ease;
+        }
+        .contato-item a:hover {
+            color: var(--highlight-cyan);
         }
 
         /* Footer */
         footer {
-            padding: 2rem 1rem;
+            padding: 3rem 1rem;
             text-align: center;
             color: var(--text-dark-gray);
             font-size: 0.9rem;
@@ -310,21 +467,12 @@
 
         /* Responsive */
         @media (min-width: 768px) {
-            .hero h1 {
-                font-size: 4.5rem;
-            }
-
-            .hero-buttons {
-                flex-direction: row;
-            }
-
-            .grid-3-cols {
-                grid-template-columns: repeat(3, 1fr);
-            }
-
-            section h2 {
-                font-size: 3rem;
-            }
+            .hero h1 { font-size: 4.5rem; }
+            .hero-buttons { flex-direction: row; }
+            .tese-grid { grid-template-columns: 1fr; }
+            .atuacao-grid { grid-template-columns: repeat(3, 1fr); }
+            .contato-grid { grid-template-columns: repeat(3, 1fr); }
+            section h2 { font-size: 3rem; }
         }
     </style>
 </head>
@@ -334,7 +482,8 @@
     </header>
 
     <main>
-        <section id="hero" class="hero">
+        <!-- Hero Section -->
+        <section id="hero" class="hero visible" style="opacity: 1; transform: translateY(0);">
             <div class="hero-content">
                 <p class="tagline-top">LEX. DATA. BELLUM.</p>
                 <p class="tagline-subtitle">A Lei. O Dado. A Defesa.</p>
@@ -359,53 +508,119 @@
             <div class="scroll-indicator"></div>
         </section>
 
-        <section id="sobre">
+        <!-- Nossa Tese Section -->
+        <section id="tese">
             <div class="container">
-                <h2>Sobre / Nossa <span>Tese</span></h2>
-                <div class="section-content">
-                    <p>Na Gonçalves et Alii, acreditamos que a complexidade do século XXI exige uma abordagem integrada. Unimos a solidez da tradição jurídica com a agilidade da inovação tecnológica para oferecer soluções robustas em segurança digital e governança.</p>
-                    <p>Nossa tese é que a proteção eficaz de instituições e indivíduos não pode mais ser compartimentada. É preciso uma visão holística que contemple os aspectos legais, tecnológicos e estratégicos, garantindo conformidade, resiliência e vantagem competitiva.</p>
+                <h2>Nossa <span>Tese</span></h2>
+                <div class="tese-grid">
+                    <div class="tese-card">
+                        <div class="icon-geom"><div class="icon-square-rot"></div></div>
+                        <div class="tese-text">
+                            <strong>A lei é infraestrutura.</strong>
+                            <p>Regulamentos digitais emergentes moldam diretamente os modelos de negócios.</p>
+                        </div>
+                    </div>
+                    <div class="tese-card">
+                        <div class="icon-geom"><div class="icon-circle"></div></div>
+                        <div class="tese-text">
+                            <strong>A informação é território.</strong>
+                            <p>Dados, APIs, modelos de IA e pipelines representam ativos estratégicos fundamentais.</p>
+                        </div>
+                    </div>
+                    <div class="tese-card">
+                        <div class="icon-geom"><div class="icon-lines"></div></div>
+                        <div class="tese-text">
+                            <strong>A defesa é contínua.</strong>
+                            <p>Proteção jurídica e técnica simultânea e ininterrupta.</p>
+                        </div>
+                    </div>
                 </div>
             </div>
         </section>
 
-        <section id="servicos">
+        <!-- Modelo de Atuação Section -->
+        <section id="atuacao">
             <div class="container">
-                <h2>Nossos <span>Serviços</span></h2>
-                <div class="grid-3-cols">
-                    <div class="grid-item">
+                <h2>Modelo de <span>Atuação</span></h2>
+                <div class="atuacao-grid">
+                    <!-- Card 1 -->
+                    <div class="atuacao-card">
+                        <div class="label">ESTRATÉGIA E CONSULTORIA</div>
                         <h3>Et Alii Advisory</h3>
-                        <p>Consultoria estratégica em compliance digital, LGPD, cibersegurança e gestão de riscos legais e tecnológicos.</p>
+                        <ul>
+                            <li>Direito digital</li>
+                            <li>Compliance regulatório</li>
+                            <li>Governança corporativa digital</li>
+                            <li>Due diligence de risco tecnológico</li>
+                            <li>Conformidade com leis de IA, privacidade e segurança</li>
+                            <li>Mapeamento de riscos e políticas internas</li>
+                        </ul>
                     </div>
-                    <div class="grid-item">
+                    <!-- Card 2 -->
+                    <div class="atuacao-card">
+                        <div class="label">TECNOLOGIA E ARQUITETURAS</div>
                         <h3>Et Alii Tech</h3>
-                        <p>Desenvolvimento de soluções tecnológicas personalizadas para governança de dados, automação jurídica e proteção de ativos digitais.</p>
+                        <ul>
+                            <li>Auditoria e governança de dados</li>
+                            <li>Modelos de avaliação de risco cibernético</li>
+                            <li>Compliance automatizado (RegTech)</li>
+                            <li>Frameworks de governança algorítmica</li>
+                            <li>Infraestrutura mínima para maturidade digital</li>
+                        </ul>
                     </div>
-                    <div class="grid-item">
+                    <!-- Card 3 -->
+                    <div class="atuacao-card">
+                        <div class="label">EDUCAÇÃO EXECUTIVA</div>
                         <h3>Et Alii Academy</h3>
-                        <p>Programas de treinamento e capacitação para equipes jurídicas e de TI, focados nas interseções entre direito, tecnologia e segurança.</p>
+                        <ul>
+                            <li>Treinamentos técnicos e jurídicos</li>
+                            <li>Programas corporativos de formação</li>
+                            <li>Workshops para equipes públicas e privadas</li>
+                            <li>Conteúdo especializado em direito digital e TI</li>
+                        </ul>
                     </div>
                 </div>
             </div>
         </section>
 
-        <section id="por-que-existimos">
+        <!-- Ecossistema Hubstry Section -->
+        <section id="ecossistema" class="hubstry-section">
             <div class="container">
-                <h2>Por que <span>Existimos</span></h2>
-                <div class="section-content">
-                    <p>Existimos para preencher a lacuna entre o universo jurídico tradicional e o dinamismo do cenário tecnológico. Nosso propósito é capacitar nossos clientes a navegar com segurança e inteligência em um mundo cada vez mais digitalizado e regulado.</p>
-                    <p>Acreditamos que a inovação deve servir à proteção, e que o direito, quando aliado à tecnologia, torna-se uma ferramenta poderosa para a construção de um futuro mais seguro e justo.</p>
+                <div class="hubstry-content">
+                    <h2>Ecossistema <span>Hubstry Deep Tech</span></h2>
+                    <p>
+                        A Gonçalves et Alii integra o ecossistema Hubstry Deep Tech — uma holding de base tecnológica fundada em 2023, operando na confluência entre ciência, engenharia, direito e inovação. Dentro desse ecossistema, a Gonçalves et Alii exerce o papel estratégico de braço jurídico-tecnológico: é a entidade responsável pela frente de Direito Digital, Compliance, Governança e Cibersegurança, conectando a infraestrutura técnica da Hubstry às exigências regulatórias e jurídicas do ambiente digital brasileiro e internacional. Onde a Hubstry constrói tecnologia proprietária, a Gonçalves et Alii assegura que ela opere dentro da lei — e que seus clientes também operem.
+                    </p>
+                    <a href="https://hubstry.dev" class="link-arrow" target="_blank" rel="noopener">Conheça a Hubstry →</a>
                 </div>
             </div>
         </section>
 
-        <section id="contato">
+        <!-- Contato Section -->
+        <section id="contato" class="contato-section">
             <div class="container">
                 <h2>Entre em <span>Contato</span></h2>
-                <div class="section-content">
-                    <p>Interessado em saber como podemos proteger sua instituição? Entre em contato conosco para uma conversa sem compromisso.</p>
-                    <a href="mailto:contato@goncalvesetalii.com" class="btn btn-filled">Fale Conosco</a>
+                <p class="contato-subtitle">LEX. DATA. BELLUM.</p>
+                
+                <div class="contato-grid">
+                    <div class="contato-item">
+                        <div class="icon-geom"><div class="icon-circle"></div></div>
+                        <a href="mailto:guihermemachado.ceo@hubstry.dev">E-mail</a>
+                        <p style="color: var(--text-dark-gray); font-size: 0.9rem;">guihermemachado.ceo@hubstry.dev</p>
+                    </div>
+                    <div class="contato-item">
+                        <div class="icon-geom"><div class="icon-square-rot"></div></div>
+                        <a href="https://hubstry.dev" target="_blank" rel="noopener">Ecossistema</a>
+                        <p style="color: var(--text-dark-gray); font-size: 0.9rem;">hubstry.dev</p>
+                    </div>
+                    <div class="contato-item">
+                        <div class="icon-geom"><div class="icon-lines"></div></div>
+                        <a href="https://github.com/goncalvesetalii" target="_blank" rel="noopener">GitHub</a>
+                        <p style="color: var(--text-dark-gray); font-size: 0.9rem;">@goncalvesetalii</p>
+                    </div>
                 </div>
+
+                <a href="mailto:guihermemachado.ceo@hubstry.dev" class="btn btn-filled">Enviar E-mail</a>
             </div>
         </section>
     </main>
@@ -422,15 +637,19 @@
             // Smooth scroll for anchor links
             document.querySelectorAll('a[href^="#"]').forEach(anchor => {
                 anchor.addEventListener('click', function (e) {
-                    e.preventDefault();
-                    document.querySelector(this.getAttribute('href')).scrollIntoView({
-                        behavior: 'smooth'
-                    });
+                    const targetId = this.getAttribute('href');
+                    if (targetId.startsWith('#')) {
+                        const targetEl = document.querySelector(targetId);
+                        if (targetEl) {
+                            e.preventDefault();
+                            targetEl.scrollIntoView({ behavior: 'smooth' });
+                        }
+                    }
                 });
             });
 
             // Fade-in sections on scroll
-            const sections = document.querySelectorAll('section');
+            const sections = document.querySelectorAll('section:not(#hero)');
 
             const observerOptions = {
                 root: null,
