@@ -4,6 +4,17 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Gonçalves et Alii | Lex. Data. Bellum.</title>
+    <meta name="description" content="Tecnologia, Direito e Segurança integrados para proteger instituições no século XXI.">
+    <link rel="icon" type="image/png" href="assets/favicon.png">
+    <link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Gonçalves et Alii | Lex. Data. Bellum.">
+    <meta property="og:description" content="Tecnologia, Direito e Segurança integrados para proteger instituições no século XXI.">
+    <meta property="og:url" content="https://goncalvesetalii.github.io/">
+    <meta property="og:image" content="https://goncalvesetalii.github.io/assets/og-banner.jpg">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta name="twitter:card" content="summary_large_image">
     <style>
         html {
             scroll-behavior: smooth;
@@ -52,6 +63,40 @@
 
         .logo span {
             color: var(--highlight-cyan);
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            text-decoration: none;
+        }
+
+        .logo img {
+            height: 40px;
+            width: auto;
+            display: block;
+        }
+
+        .nav-lexiograph {
+            color: var(--highlight-cyan);
+            text-decoration: none;
+            font-size: 0.85rem;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+            border: 1px solid var(--highlight-cyan);
+            padding: 0.4rem 0.9rem;
+            border-radius: 4px;
+            white-space: nowrap;
+        }
+
+        .nav-lexiograph:hover {
+            background: var(--highlight-cyan);
+            color: var(--bg-dark-blue);
+        }
+
+        @media (max-width: 560px) {
+            .logo-text { display: none; }
         }
 
         /* Hero Section */
@@ -482,7 +527,8 @@
 </head>
 <body>
     <header class="container">
-        <div class="logo">Gonçalves<span>et Alii</span></div>
+        <a href="#hero" class="logo"><img src="assets/logo-alii.png" alt="Logo Gonçalves et Alii" width="66" height="40"><span class="logo-text"><span style="color: var(--text-white);">Gonçalves</span> <span>et Alii</span></span></a>
+        <a href="https://lexiograph.hubstry.dev" class="nav-lexiograph" target="_blank" rel="noopener">Lexiograph ↗</a>
     </header>
 
     <main>
@@ -878,6 +924,14 @@
                     </p>
                 </div>
             </div>
+
+            <a href="https://lexiograph.hubstry.dev" target="_blank" rel="noopener" style="display:block;padding:1.25rem;background:rgba(0,212,255,0.06);border:1px solid rgba(0,212,255,0.3);border-radius:4px;text-decoration:none;">
+                <p style="font-size:0.7rem;color:#00d4ff;letter-spacing:0.15em;text-transform:uppercase;margin:0 0 0.4rem;">Em produção — Lexiograph ↗</p>
+                <p style="font-size:0.9rem;color:#c0d0e0;line-height:1.6;margin:0;">
+                    Aplicação de inteligência jurídica construída sobre o IPII.
+                    Acesse em lexiograph.hubstry.dev.
+                </p>
+            </a>
         </section>
 
         <section id="publicacoes" style="padding:4rem 2rem;max-width:900px;margin:0 auto;border-top:1px solid #1a2a3a;">
@@ -982,6 +1036,11 @@
                 <p class="contato-subtitle">LEX. DATA. BELLUM.</p>
                 
                 <div class="contato-grid">
+                    <div class="contato-item">
+                        <div class="icon-geom"><div class="icon-square-rot"></div></div>
+                        <a href="https://lexiograph.hubstry.dev" target="_blank" rel="noopener">Lexiograph</a>
+                        <p style="color: var(--text-dark-gray); font-size: 0.9rem;">lexiograph.hubstry.dev</p>
+                    </div>
                     <div class="contato-item">
                         <div class="icon-geom"><div class="icon-circle"></div></div>
                         <a href="mailto:guihermemachado.ceo@hubstry.dev">E-mail</a>
