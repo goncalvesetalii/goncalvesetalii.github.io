@@ -80,6 +80,6 @@ A Gonçalves et Alii integra o ecossistema **Hubstry Deep Tech** — uma holding
 
 ## Contato
 
-**E-mail:** guihermemachado.ceo@hubstry.dev
+**E-mail:** guilhermemachado.ceo@hubstry.dev
 **Site:** https://goncalvesetalii.github.io
 **GitHub:** https://github.com/goncalvesetalii
